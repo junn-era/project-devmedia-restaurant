@@ -12,4 +12,4 @@ export const productsFilter = (category) => {
   return products.filter((product) => product.category === category);
 };
 
-export const productsEntry = productsFilter('Entries');
+export const productsEntries = productsFilter('Entries');

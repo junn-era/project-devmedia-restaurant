@@ -6,9 +6,3 @@
   box-sizing: border-box;
   font-family: 'Poppins', sans-serif;
 }
-
-.limit-section {
-  width: 100%;
-  max-width: 1024px;
-  margin: 0 auto;
-}

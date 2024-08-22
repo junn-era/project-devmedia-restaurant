@@ -1,17 +1,22 @@
 'use client';
-import Head from "next/head";
+import Banner from '../../public/assets/banner.png';
+import Cards from '../components/Cards';
 import Categories from '../components/Categories';
-import { useState } from 'react';
+import Head from "next/head";
+import Image from 'next/image';
 import {
   productsFilter,
   searchProduct,
-  productsEntry
+  productsEntry,
+  productsEntries
 } from '../components/service';
-// import styles from "@/styles/Home.module.css";
+import { useState } from 'react';
+import styles from '../styles/Home.module.css';
+import SearchField from '../components/SearchField';
 
 export default function Home() {
 
-  const [filteredData, setFilteredData] = useState(productsEntry);
+  const [filteredData, setFilteredData] = useState(productsEntries);
   const [typedSearchText, setTypedSearchText] = useState('');
 
   const [buttonClicked, setButtonClicked] = useState('Entries');
@@ -36,13 +41,44 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
 
-      <main>
+      <header className={styles.banner}>
+        <Image src={Banner} alt='banner' />
+        <div>
+          <h1>RESTAURANTE</h1>
+          <p>
+            De pratos clássicos a criações surpreendentes, nosso cardápio é um
+            requinte de sabores refinados.
+          </p>
+        </div>
+      </header>
+
+      <main className={styles.main_container}>
+
         <Categories
           handleFilter={handleFilter}
           buttonClicked={buttonClicked}
         />
+
+        <SearchField
+          typedSearchText={typedSearchText}
+          handleSearch={handleSearch}
+        />
+
+        <section className={styles.section_cards}>
+
+          <div>
+            <h2>Cardápio</h2>
+          </div>
+
+          <div className={styles.container_cards}>
+            {filteredData.map((product) => (
+              <Cards key={product.id} product={product} />
+            ))}
+          </div>
+
+        </section>
       </main>
 
     </>
   );
-}
+};

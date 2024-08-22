@@ -13,33 +13,34 @@ const Categories = ({ handleFilter, buttonClicked }) => {
   return (
     <section className={styles.section_categories}>
       <div className={styles.container_buttons}>
-        <button className={buttonClicked === 'Entries' ? styles.turnOnBtn : styles.turnOffBtn}
-          onClick={() => handleFilter('Entries')}>
+
+        <button className={buttonClicked === 'Entradas' ? styles.turnOnBtn : styles.turnOffBtn}
+          onClick={() => handleFilter('Entradas')}>
           <Image className={styles.icon} src={icon1} alt='Ícone' />Entradas
         </button>
 
-        <button className={buttonClicked === 'Pasta' ? styles.turnOnBtn : styles.turnOffBtn}
-          onClick={() => handleFilter('Pasta')}>
+        <button className={buttonClicked === 'Massas' ? styles.turnOnBtn : styles.turnOffBtn}
+          onClick={() => handleFilter('Massas')}>
           <Image className={styles.icon} src={icon2} alt='Ícone' />Massas
         </button>
 
-        <button className={buttonClicked === 'Meats' ? styles.turnOnBtn : styles.turnOffBtn}
-          onClick={() => handleFilter('Meats')}>
+        <button className={buttonClicked === 'Carnes' ? styles.turnOnBtn : styles.turnOffBtn}
+          onClick={() => handleFilter('Carnes')}>
           <Image className={styles.icon} src={icon3} alt='Ícone' />Carnes
         </button>
 
-        <button className={buttonClicked === 'Drinks' ? styles.turnOnBtn : styles.turnOffBtn}
-          onClick={() => handleFilter('Drinks')}>
+        <button className={buttonClicked === 'Bebidas' ? styles.turnOnBtn : styles.turnOffBtn}
+          onClick={() => handleFilter('Bebidas')}>
           <Image className={styles.icon} src={icon4} alt='Ícone' />Bebidas
         </button>
 
-        <button className={buttonClicked === 'Salads' ? styles.turnOnBtn : styles.turnOffBtn}
-          onClick={() => handleFilter('Salads')}>
+        <button className={buttonClicked === 'Saladas' ? styles.turnOnBtn : styles.turnOffBtn}
+          onClick={() => handleFilter('Saladas')}>
           <Image className={styles.icon} src={icon5} alt='Ícone' />Saladas
         </button>
 
-        <button className={buttonClicked === 'Desserts' ? styles.turnOnBtn : styles.turnOffBtn}
-          onClick={() => handleFilter('Desserts')}>
+        <button className={buttonClicked === 'Sobremesas' ? styles.turnOnBtn : styles.turnOffBtn}
+          onClick={() => handleFilter('Sobremesas')}>
           <Image className={styles.icon} src={icon6} alt='Ícone' />Sobremesas
         </button>
       </div>
